@@ -27,11 +27,11 @@ def quiz_processAnswer():
 # Loop is used to create multiple Radiobuttons
 # rather than creating each button separately
 
-for (text, value) in values.items():
+for (answers, num) in values.items():
     Radiobutton(
-        master, text = text,
+        master, text = answers,
         variable     = v,
-        value        = value,
+        value        = num,
         indicator    = 0,
         background   = "darkslategray",
         fg           = "goldenrod",
