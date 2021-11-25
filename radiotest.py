@@ -13,16 +13,20 @@ v = StringVar(master, "1")
 # Dictionary to create multiple buttons
 
 values = {
-    "Pong": "1",
-    "Spacewar!": "2",
-    "Tetris": "3",
-    "Snake": "4"
+    "Pong": 0,
+    "Spacewar!": 1,
+    "Tetris": 2,
+    "Snake": 3
 }
+
+# Question
+
+theQuestion = "Wat is de eerste videogame ooit gemaakt?"
 
 # Detect which button is selected
 
-def quiz_processAnswer():
-    print(values.get())
+def quiz_processAnswer(answers):
+    print(values.get(answers))
 
 # Loop is used to create multiple Radiobuttons
 # rather than creating each button separately
@@ -35,7 +39,7 @@ for (answers, num) in values.items():
         indicator    = 0,
         background   = "darkslategray",
         fg           = "goldenrod",
-        command      = quiz_processAnswer
+        command      = lambda answers = answers: quiz_processAnswer(answers)
     ).pack(fill = X, ipady = 5)
 
 # Test
