@@ -26,7 +26,14 @@ theQuestion = "Wat is de eerste videogame ooit gemaakt?"
 # Detect which button is selected
 
 def quiz_processAnswer(answers):
-    print(values.get(answers))
+    choice = values.get(answers)
+    print(choice)
+
+    if (choice == 1):
+        print("Je hebt correct geantwoord!")
+
+    else:
+        print("fout!")
 
 # Loop is used to create multiple Radiobuttons
 # rather than creating each button separately
@@ -41,8 +48,6 @@ for (answers, num) in values.items():
         fg           = "goldenrod",
         command      = lambda answers = answers: quiz_processAnswer(answers)
     ).pack(fill = X, ipady = 5)
-
-# Test
 
 
 # Infinite loop can be terminated by
