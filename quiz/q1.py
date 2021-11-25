@@ -3,7 +3,7 @@ from tkinter import *
 
 # Creating master Tkinter window
 master = Tk()
-master.geometry("175x140")
+master.geometry("700x200")
 
 # Tkinter string variable
 # able to store any string value
@@ -30,16 +30,24 @@ def quiz_processAnswer(answers):
     print(choice)
 
     if (choice == 1):
-        print("Je hebt correct geantwoord!")
+        correct = print("Je hebt correct geantwoord!")
+        Label(list, text = correct)\
+            .pack(side = "bottom", fill = "x")
 
     else:
-        print("fout!")
+        wrong = print("fout!")
+        Label(list, text = wrong).pack()
+
+
+# Print the question
+
+Label(master, text = theQuestion).pack()
 
 # Loop is used to create multiple Radiobuttons
 # rather than creating each button separately
 
 for (answers, num) in values.items():
-    Radiobutton(
+    list = Radiobutton(
         master, text = answers,
         variable     = v,
         value        = num,
@@ -47,7 +55,9 @@ for (answers, num) in values.items():
         background   = "darkslategray",
         fg           = "goldenrod",
         command      = lambda answers = answers: quiz_processAnswer(answers)
-    ).pack(fill = X, ipady = 5)
+    )
+
+    list.pack(fill = X, ipady = 5)
 
 
 # Infinite loop can be terminated by

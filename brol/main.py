@@ -2,8 +2,6 @@
 # Import dependencies
 # -----------------------------------
 
-import math
-import time
 import sys
 import tkinter as tk
 import questions
