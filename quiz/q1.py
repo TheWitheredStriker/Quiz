@@ -1,4 +1,5 @@
 # Importing Tkinter module
+import tkinter
 from tkinter import *
 
 # Creating master Tkinter window
@@ -30,13 +31,14 @@ def quiz_processAnswer(answers):
     print(choice)
 
     if (choice == 1):
-        correct = print("Je hebt correct geantwoord!")
-        Label(list, text = correct)\
-            .pack(side = "bottom", fill = "x")
+        correct = "Je hebt correct geantwoord!"
+        Label(text = correct).pack()
+        list.config(command = None)
+        correct.replace("Je hebt correct geantwoord!", "")
 
     else:
-        wrong = print("fout!")
-        Label(list, text = wrong).pack()
+        wrong = "fout!"
+        Label(text = wrong).pack()
 
 
 # Print the question
