@@ -1,6 +1,6 @@
 # Importing Tkinter module
 
-import tkinter
+from tkinter import *
 
 # Creating master Tkinter window
 
