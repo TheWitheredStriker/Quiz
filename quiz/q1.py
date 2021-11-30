@@ -27,17 +27,20 @@ theQuestion = "Wat is de eerste videogame ooit gemaakt?"
 
 # Detect which button is selected
 
+hasAnswered = False
+
 def quiz_processAnswer(answers):
     choice = values.get(answers)
     print(choice)
+    global hasAnswered
 
-    if (choice == 1):
+    if (choice == 1 and hasAnswered == False):
+        hasAnswered = True
         correct = "Je hebt correct geantwoord!"
         Label(text = correct).pack()
-        list.config(command = None)
-        correct.replace("Je hebt correct geantwoord!", "")
 
-    else:
+    elif (choice != 1 and hasAnswered == False):
+        hasAnswered = True
         wrong = "fout!"
         Label(text = wrong).pack()
 
