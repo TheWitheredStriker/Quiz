@@ -18,15 +18,15 @@ v = StringVar(master, "1")
 # Dictionary to create multiple buttons
 
 values = {
-    "Pong": 0,
-    "Spacewar!": 1,
-    "Tetris": 2,
-    "Snake": 3
+    "Adobe Flash Player": 0,
+    "Shockwave": 1,
+    "Microsoft Silverlight": 2,
+    "3D Groove GX": 3
 }
 
 # Question
 
-theQuestion = "Wat is de eerste videogame ooit gemaakt?"
+theQuestion = "Welke bekende online mediaspeler die veel gebruikt werd voor games is begin dit jaar (2021) stopgezet?"
 
 # Detect which button is selected
 
@@ -37,7 +37,7 @@ def quiz_processAnswer(answers):
     print(choice)
     global hasAnswered
 
-    if (choice == 1 and hasAnswered == False):
+    if (choice == 0 and hasAnswered == False):
         hasAnswered = True
         correct = "Je hebt correct geantwoord!"
         Label(text = correct).pack()

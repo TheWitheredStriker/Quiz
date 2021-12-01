@@ -2,8 +2,6 @@
 
 from tkinter import *
 import time
-import os
-import sys
 
 # Creating master Tkinter window
 
@@ -18,15 +16,14 @@ v = StringVar(master, "1")
 # Dictionary to create multiple buttons
 
 values = {
-    "Pong": 0,
-    "Spacewar!": 1,
-    "Tetris": 2,
-    "Snake": 3
+    "Third-Person Shooter": 0,
+    "Terabytes Per Second": 1,
+    "TelePortation System": 2
 }
 
 # Question
 
-theQuestion = "Wat is de eerste videogame ooit gemaakt?"
+theQuestion = "Waarvoor staat TPS?"
 
 # Detect which button is selected
 
@@ -37,7 +34,7 @@ def quiz_processAnswer(answers):
     print(choice)
     global hasAnswered
 
-    if (choice == 1 and hasAnswered == False):
+    if (choice == 0 and hasAnswered == False):
         hasAnswered = True
         correct = "Je hebt correct geantwoord!"
         Label(text = correct).pack()
@@ -46,6 +43,7 @@ def quiz_processAnswer(answers):
         hasAnswered = True
         wrong = "fout!"
         Label(text = wrong).pack()
+
 
 # Print the question
 
